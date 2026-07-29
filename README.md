@@ -1,5 +1,16 @@
 # Day 04 Lab v2 — Research Agent Tool Eval
 
+## Bảng Phân Công Công Việc (Nhóm 5 Thành Viên)
+
+| STT | Họ và tên | Mã học viên | Vai trò trong nhóm |
+|-----|-----------|-------------|--------------------|
+| 1   |  Mai Việt Anh  |     2A202601083      |      Thành viên            |
+| 2   |  Trần Tuấn Trung  |     2A202601769     |      Thành viên            |
+| 3   |  Nguyễn Trọng Dũng   |     2A202601965      |      Nhóm trưởng            |
+| 4   |  Vũ Quang Tùng  |     2A202601545      |      Thành viên           |
+| 5   |  Chu Thị Yến Khanh  |     2A202601739      |      Thành viên           |
+
+
 ## Brief
 
 Trong lab này, nhóm build một research agent nhỏ nhưng chạy thật. Agent nhận request của user, chọn tool, truyền arguments, chạy tool thật, lưu full JSON log, rồi dùng log đó để tối ưu prompt/tool declaration qua nhiều version.

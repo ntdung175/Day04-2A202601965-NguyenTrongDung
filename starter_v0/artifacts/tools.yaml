@@ -9,21 +9,21 @@
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: "Hỏi người dùng khi thiếu thông tin quan trọng (ví dụ: thiếu URL, thiếu tên người), hoặc khi cần xác nhận (yes_no) trước khi thực hiện hành động gửi/post."
     parameters:
       type: object
       properties:
         question: {type: string, default: "", description: "Câu hỏi"}
-        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời"}
+        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời. PHẢI LÀ 'yes_no' nếu đang xác nhận hành động gửi, PHẢI LÀ 'text' nếu đang hỏi xin thêm thông tin/URL."}
         options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
-      required: [question]
+      required: [question, response_type]
 
   - name: timeline
     description: "Lấy các bài đăng gần đây."
     parameters:
       type: object
       properties:
-        screenname: {type: string, default: "", description: "Tên tài khoản"}
+        screenname: {type: string, default: "", description: "Tên tài khoản (ví dụ: sama, elonmusk). Tự động map từ tên thật nếu có."}
         limit: {type: integer, default: 5, description: "Số lượng"}
       required: [screenname]
 
@@ -42,7 +42,7 @@ tools:
     parameters:
       type: object
       properties:
-        query: {type: string, default: "", description: "Truy vấn"}
+        query: {type: string, default: "", description: "Từ khóa chính (không bao gồm các từ như 'tin tức', 'news')"}
         topic: {type: string, enum: [general, news], default: "general", description: "Phân loại"}
         timeframe: {type: string, enum: [day, week, month, year], default: "week", description: "Khoảng thời gian"}
         max_results: {type: integer, default: 5, description: "Số kết quả"}
@@ -79,7 +79,7 @@ tools:
 
   # ---------------- Bonus tools ----------------
   - name: send
-    description: "Gửi một đoạn văn bản đi."
+    description: "Gửi một đoạn văn bản đi. BẮT BUỘC dùng clarify(response_type='yes_no') để xác nhận trước khi gọi hàm này."
     parameters:
       type: object
       properties:

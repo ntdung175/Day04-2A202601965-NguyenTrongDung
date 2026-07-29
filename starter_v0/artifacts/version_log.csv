@@ -1,1 +1,13 @@
 version,author,changed_artifact,artifact_version,prompt_hash,tools_hash,reason,hypothesis,metric_name,metric_before,metric_after,run_file
+
+v1,ntdung175,"system_prompt.md, tools.yaml",v1+p57231b16f41d+t33b2d93bc2fa,p57231b16f41d,t33b2d93bc2fa,"Fix eval failures","Explicit instructions for missing info and out of scope",case_accuracy,0.65,0.85,runs/v1_B_base_openrouter_20260729T103629310293.json
+
+v2,ntdung175,tools.yaml,v2+p57231b16f41d+tc303cac69ac9,p57231b16f41d,tc303cac69ac9,"Fix missing_info response_type","Clarify param description in tools.yaml forces 'text' or 'yes_no'",case_accuracy,0.85,0.9,runs/v2_B_base_openrouter_20260729T104054476503.json
+
+v3,ntdung175,system_prompt.md,v3+p1a8b288e120e+tc303cac69ac9,p1a8b288e120e,tc303cac69ac9,"Fix M06 and R12","Explicit prompt against extra tool on switch and forceful yes_no",case_accuracy,0.9,0.95,runs/v3_B_base_openrouter_20260729T104220451723.json
+
+v4,ntdung175,tools.yaml,v4+p1a8b288e120e+t95405ad5f2b4,p1a8b288e120e,t95405ad5f2b4,"Make response_type required","Force LLM to explicitly output response_type",case_accuracy,0.95,0.95,runs/v4_B_base_openrouter_20260729T104415324288.json
+
+v5,ntdung175,system_prompt.md,v5+pc4da213a4126+t95405ad5f2b4,pc4da213a4126,t95405ad5f2b4,"Fix R12 finally","Added explicit precedence instruction for yes_no",case_accuracy,0.95,1.0,runs/v5_B_base_openrouter_20260729T104623631425.json
+
+v6,ntdung175,system_prompt.md,v6+p17fa21de99c1+t95405ad5f2b4,p17fa21de99c1,t95405ad5f2b4,"Holistic prompt optimization","Refactored prompt to teach multi-turn reasoning and explicit contextual disambiguation",case_accuracy,0.8,1.0,runs/v6_B_group_openrouter_20260729T110422641931.json
